@@ -13,7 +13,23 @@ const Navbar = () => {
   return (
     <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400'>
       {/* <img className='w-44 cursor-pointer' src={assets.logo} alt="" /> */}
-      <h2 onClick={()=>navigate('/')}  className='text-xs sm:text-2xl md:text-3xl lg:text-6xl font-bold text-primary tracking-wide hover:underline'> Med<span className='text-secondary'>Care</span><span className='text-tertiary'>Hub</span> </h2>
+      <div 
+  style={{ 
+    display: 'flex', 
+    alignItems: 'center', 
+    cursor: 'pointer', 
+    fontWeight: 'bold', 
+    fontSize: '2rem' 
+  }} 
+  onClick={() => navigate('/')}
+>
+  <h1>
+    <span style={{ color: '#1d4ed8' }}>Med</span>
+    <span style={{ color: '#22c55e' }}>Care</span>
+    <span style={{ color: '#ef4444' }}>Hub</span>
+  </h1>
+</div>
+
       <ul className='hidden md:flex items-start gap-5 font-medium'>
             <NavLink to='/' >
                 <li className='py-1'>HOME</li>
@@ -75,3 +91,5 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+
