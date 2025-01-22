@@ -63,7 +63,8 @@ const addDoctor = async (req, res) => {
     res.status(201).json({ success: true, message: "Doctor added successfully" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ success: false, message: error.message });
+    res.status(500).json({ success: false, message: "lol" });
+    console.log(error.response?.data);
   }
 };
 
@@ -88,5 +89,23 @@ const loginAdmin = async(req,res) => {
     }
 }
 
-export { addDoctor,loginAdmin };
+
+// api to get all docotr list for admin panel
+const allDoctors = async (req,res) => {
+  try {
+
+    const doctors = await doctorModel.find({}).select('-password')
+    res.json({success:true,doctors})
+    
+  } catch (error) {
+    console.log(error);
+        res.json({success:false,message:error.message})
+  }
+}
+
+
+
+
+
+export { addDoctor,loginAdmin,allDoctors };
 
