@@ -21,7 +21,23 @@ const Navbar = () => {
   return (
     <div className='flex justify-between items-center px-4 sm:px-10 py-3 border-b bg-white'>
       <div className='flex items-center gap-2 text-xs'>
-        <img src={assets.admin_logo} alt="" />
+        {/* <img src={assets.admin_logo} alt="" /> */}
+        <div 
+  style={{ 
+    display: 'flex', 
+    alignItems: 'center', 
+    cursor: 'pointer', 
+    fontWeight: 'bold', 
+    fontSize: '2rem' 
+  }} 
+  onClick={() => navigate('/')}
+>
+  <h1>
+    <span style={{ color: '#1d4ed8' }}>Med</span>
+    <span style={{ color: '#22c55e' }}>Care</span>
+    <span style={{ color: '#ef4444' }}>Hub</span>
+  </h1>
+</div>
         <p className='border px-2.5 py-2.5 rounded-full border-gray-500 text-gray-600'>{aToken ? 'Admin' : 'Doctor'}</p>
       </div>
       <button onClick={logout} className='bg-primary text-white text-sm px-10 py-2 rounded-full'>Logout</button>
